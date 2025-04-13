@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Proyecto 360 Claudia</title>
+    <meta name="description" content="Hello, WebVR! A-Frame">
+    <!-- Con este script se importa la librería A-Frame -->
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Declarar los assets (materiales que usarás) -->
+    <a-assets>
+      <!-- Imagen 360 con un identificador único -->
+      <img id="MySky" crossorigin src="https://i.postimg.cc/dV8K3Sgv/FotoInk.jpg">
+      
+      <!-- Imágenes a mostrar dentro de la escena -->
+      <img id="img1" src="imagenes/Ilustracion1.png" title="Ilustracion1">
+      <img id="img2" src="imagenes/Ilustracion2.png" title="Ilustracion2">
+      <img id="img3" src="imagenes/Ilustracion3.png" title="Ilustracion3">
+    </a-assets>
+
+    <!-- Crear la escena de A-Frame -->
+    <a-scene>
+      <!-- Declarar un "cielo" y tapizarlo con la imagen 360 -->
+      <a-sky src="#MySky"></a-sky>
+
+      <!-- Cámara con controles -->
+      <a-entity camera look-controls wasd-controls position="0 1.6 0"></a-entity>
+
+      <!-- Imagen 1 colocada frente al usuario -->
+      <a-image src="#img1"
+               position="0 2 -3"
+               width="2"
+               height="1"
+               rotation="0 0 0">
+      </a-image>
+
+      <!-- Imagen 2 a la izquierda -->
+      <a-image src="#img2"
+               position="-3 2 -1"
+               width="2"
+               height="1"
+               rotation="0 30 0">
+      </a-image>
+
+      <!-- Imagen 3 a la derecha -->
+      <a-image src="#img3"
+               position="3 2 -1"
+               width="2"
+               height="1"
+               rotation="0 -30 0">
+
+      </a-image>
+      </a-image>
+    </a-scene>
+
+  </body>
+</html>
